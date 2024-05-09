@@ -16,6 +16,7 @@ function App() {
   console.log("f", f);
 
   // && (and ..그러면) : 왼쪽항이 true면 오른쪽 값
+  // and 연산에서 앞이 true이면 뒤에서 결정된다(뒤도 연산을 한다, 앞이 false이면 뒤는 연산을 안한다)
   const g = a < 10 && "hello"; // hello
   const h = a < 5 && "hi"; // false
   console.log("g", g);
