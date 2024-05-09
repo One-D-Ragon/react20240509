@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       {/* 페이지 소스 보기에서 보이지 않음. 검사의 Elements 에서 볼 수 있음
-          main.jsx 파일의 getElementId를 통해서 렌더링되어서 볼 수 있다 */}
+          main.jsx 파일의 createRoot 코드의 getElementId를 통해서 렌더링되어서 볼 수 있다 */}
       <div>
         {/* jsx 내에서의 주석 */}
         {/* 단축키 : ctrl + / */}
