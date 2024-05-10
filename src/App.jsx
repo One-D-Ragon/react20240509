@@ -27,6 +27,30 @@ function App(props) {
   console.log("x2", x2); // 3.14
   console.log("x3", x3); // lunch
 
+  const c = ["son", "lee"];
+  const [a1] = c;
+  console.log("a1", a1); // son
+
+  // 필요없는 것은 안받아도 되고
+  // 없는 것을 더 받아도 된다
+  const [b1, b2, b3] = c;
+  console.log("b3", b3); // undefined
+
+  const [c1, c2 = "park", c3 = "kim"] = c;
+  console.log("c1", c1);
+  console.log("c2", c2);
+  console.log("c3", c3);
+
+  // 연습
+  const d = ["name", "email", "phone"];
+  // 분해할당 코드 작성
+  const [d1, d2, d3 = "country", d4 = "city"] = d;
+
+  console.log("d1", d1); // name
+  console.log("d2", d2); // email
+  console.log("d3", d3); // phone
+  console.log("d4", d4); // city
+
   return <div></div>;
 }
 
