@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-function MyBox({ message }) {
+// step1 : create context
+const MessageContext = createContext("");
+
+function MyBox() {
+  // step2 : use the context
+  // prop drilling이 일어난 코드를 지운다
+  const message = useContext(MessageContext);
   return <div>{message}</div>;
 }
 
-function MySection({ message }) {
-  return <MyBox message={message} />;
+function MySection() {
+  return <MyBox />;
 }
 
-function MyContainer({ message }) {
-  return <MySection message={message} />;
+function MyContainer() {
+  return <MySection />;
 }
 
 // context : prop drilling 없이 값을 전달하는 방법
@@ -22,7 +28,10 @@ function App(props) {
       <input type="text" onChange={(e) => setMessage(e.target.value)} />
       <p>{message}</p>
       <hr />
-      <MyContainer message={message} />
+      {/* step3 : provide the context */}
+      <MessageContext.Provider value={message}>
+        <MyContainer />
+      </MessageContext.Provider>
     </div>
   );
 }
