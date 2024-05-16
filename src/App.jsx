@@ -5,6 +5,9 @@ function App(props) {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
 
+  const [menu, setMenu] = useState("");
+  const [price, setPrice] = useState(0);
+
   function handleClick1() {
     // json 데이터는 get 방식 요청이 불가능
 
@@ -37,6 +40,10 @@ function App(props) {
     axios.post("/api/main41/sub3", { name, city });
   }
 
+  function handleClick4() {
+    axios.post("/api/main41/sub4", { menu, price });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>요청(json 데이터 포함)</button>
@@ -48,6 +55,22 @@ function App(props) {
         <input type="text" onChange={(e) => setCity(e.target.value)} />
         <br />
         <button onClick={handleClick3}>요청 (input에 입력한 값)</button>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder={"메뉴"}
+          onChange={(e) => setMenu(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder={"가격"}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <br />
+        <button onClick={handleClick4}>요청</button>
       </div>
     </div>
   );
