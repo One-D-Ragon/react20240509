@@ -38,6 +38,22 @@ function App(props) {
     axios.post("/api/someurl3", params);
   }
 
+  function handleClickButton7() {
+    const params = new URLSearchParams();
+    params.append("name", "육수당");
+    params.append("menu", "부대찌개");
+    params.append("price", 9000);
+    axios.get(`/api/someurl4?${params}`);
+  }
+  function handleClickButton8() {
+    const params = new URLSearchParams();
+    params.append("name", "사장님돈까스");
+    params.append("menu", "치즈돈까스");
+    params.append("menu", "고구마치즈돈까스");
+    params.append("price", 11500);
+    axios.post("/api/someurl4", params);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -54,8 +70,8 @@ function App(props) {
       <button onClick={handleClickButton6}>post 요청 with data</button>
 
       {/* /api/someurl4 get/post with data */}
-      <button>get 요청 with data</button>
-      <button>post 요청 with data</button>
+      <button onClick={handleClickButton7}>get 요청 with data</button>
+      <button onClick={handleClickButton8}>post 요청 with data</button>
     </div>
   );
 }
