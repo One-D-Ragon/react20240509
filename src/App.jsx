@@ -24,11 +24,24 @@ function App(props) {
     });
   }
 
+  function handleClick3() {
+    axios.post("/api/main41/sub7", {
+      name: "kim",
+      age: 33,
+      married: true,
+      position: ["cb", "lcb", "rcb"],
+      team: { name: "뮌헨", country: "독일" },
+      price: null,
+    });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>json 데이터와 요청</button>
-
+      <br />
       <button onClick={handleClick2}>json 데이터와 요청</button>
+      <br />
+      <button onClick={handleClick3}>json 데이터와 요청</button>
     </div>
   );
 }
