@@ -69,6 +69,10 @@ function App(props) {
             break;
         }
         */
+      })
+      .finally(() => {
+        // finally : 응답 코드가 200이든 아니든 항상 실행됨
+        console.log("항상 실행되는 메소드");
       });
   }
 
