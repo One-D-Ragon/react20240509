@@ -29,6 +29,15 @@ function App(props) {
     axios.get(`/api/someurl3?${params}`);
   }
 
+  function handleClickButton6() {
+    // post는 url이 아니라 몸통에 붙는다
+    const params = new URLSearchParams();
+    params.append("id", 5);
+    params.append("city", "서울");
+    params.append("country", "한국");
+    axios.post("/api/someurl3", params);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -39,7 +48,14 @@ function App(props) {
       <button onClick={handleClickButton3}>get 요청2</button>
       <button onClick={handleClickButton4}>post 요청2</button>
 
+      {/* data도 함께 보내기 */}
+      <hr />
       <button onClick={handleClickButton5}>get 요청 with query string</button>
+      <button onClick={handleClickButton6}>post 요청 with data</button>
+
+      {/* /api/someurl4 get/post with data */}
+      <button>get 요청 with data</button>
+      <button>post 요청 with data</button>
     </div>
   );
 }
