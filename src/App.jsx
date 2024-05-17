@@ -1,16 +1,24 @@
 import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
+function SpringRoot() {
+  return (
+    <div>
+      <div style={{ padding: "10px", backgroundColor: "#eee" }}>
+        상단 NAVBAR
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <Outlet />
+      </div>
+    </div>
+  );
+}
+
 const router = createBrowserRouter([
   {
     path: "spring",
-    element: (
-      <div>
-        spring root page
-        <Outlet />{" "}
-        {/* 하위 경로에 있는 것을 보여준다. 상위 경로는 안바뀌고 하위 경로만 바뀐다 */}
-      </div>
-    ),
+    element: <SpringRoot />,
     children: [
       { path: "api", element: <div>api page</div> },
       { path: "doc", element: <div>doc page</div> },
