@@ -28,8 +28,12 @@ function SpringRoot() {
         </div>*/}
 
         <div>
+          <Link to={"/spring"}>HOME</Link>
+        </div>
+        <div>
+          {/* a 태그 대신 Link 컴포넌트 사용하기 */}
           <Link to="/spring/learn">LEARN</Link>
-          {/* react-router-dom의 link*/}
+          {/* react-router-dom의 Link 컴포넌트를 사용 */}
         </div>
         <div>
           <Link to="/spring/api">API</Link>
@@ -51,6 +55,8 @@ const router = createBrowserRouter([
     path: "spring",
     element: <SpringRoot />,
     children: [
+      { index: true, element: <div>spring main page</div> },
+      /* index 값을 주면 상위 경로로 끝났을 때 outlet으로 나오는 컴포넌트를 정의할 수 있다*/
       { path: "api", element: <div>api page</div> },
       { path: "doc", element: <div>doc page</div> },
       { path: "learn", element: <div>learn page</div> },
