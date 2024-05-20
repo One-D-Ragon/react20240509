@@ -3,9 +3,14 @@ import {
   Box,
   Center,
   ChakraProvider,
+  Checkbox,
   FormControl,
   FormLabel,
   Input,
+  Radio,
+  RadioGroup,
+  Switch,
+  Textarea,
 } from "@chakra-ui/react";
 
 function App(props) {
@@ -22,6 +27,21 @@ function App(props) {
           </FormControl>
         </Box>
       </Center>
+      <hr />
+      <Checkbox>Lorem.</Checkbox>
+      <Checkbox>Lorem.</Checkbox>
+      <Checkbox>Libero.</Checkbox>
+      <Checkbox>Numquam!</Checkbox>
+      <hr />
+      <RadioGroup>
+        <Radio value="1">1</Radio>
+        <Radio value="2">2</Radio>
+        <Radio value="3">3</Radio>
+      </RadioGroup>
+      <hr />
+      <Switch />
+      <hr />
+      <Textarea> </Textarea>
     </ChakraProvider>
   );
 }
