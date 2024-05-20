@@ -1,54 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
 function App(props) {
-  const [name, setName] = useState("");
-  const [file, setFile] = useState([]);
-
-  // console.log("axios로 파일 전송");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    // post: 경로, 데이터, cofing
-    // posrForm : content 타입을 자동으로 세팅해줌 = 경로, 데이터
-    axios.postForm("/api/main45/sub2", {
-      name: name,
-      file: file,
-    });
-  }
-
-  const fileNames = [];
-  for (let i = 0; i < file.length; i++) {
-    fileNames.push(<li>{file.item(i).name}</li>);
-  }
-
-  return (
-    <div>
-      {/* file 보낼때는 post 방식과 encType="multipart/form-data"를 꼭 써줘야한다*/}
-      <form onSubmit={handleSubmit}>
-        이름{" "}
-        <input
-          type="text"
-          name="name"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <br />
-        <input
-          multiple={true}
-          type="file"
-          name="file"
-          onChange={(e) => setFile(e.target.files)}
-        />
-        <br />
-        <input type="submit" />
-      </form>
-      <div>
-        <ul>{fileNames}</ul>
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
-/* 개발자 도구 Payload의 view source로 파일 볼 수 있음 */
 
 export default App;
